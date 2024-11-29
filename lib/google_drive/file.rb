@@ -176,7 +176,7 @@ module GoogleDrive
     def update_from_file(path, params = {})
       # Somehow it doesn't work if I specify the file name directly as
       # upload_source.
-      open(path, 'rb') do |f|
+      File.open(path, 'rb') do |f|
         update_from_io(f, params)
       end
       nil
