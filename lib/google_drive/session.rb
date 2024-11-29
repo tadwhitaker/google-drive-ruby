@@ -82,7 +82,7 @@ module GoogleDrive
         request_options = nil
     )
       if json_key_path_or_io.is_a?(String)
-        open(json_key_path_or_io) do |f|
+        File.open(json_key_path_or_io) do |f|
           from_service_account_key(f, scope, client_options, request_options)
         end
       else
