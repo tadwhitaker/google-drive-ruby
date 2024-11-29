@@ -124,7 +124,7 @@ module GoogleDrive
     # Exports the worksheet to +path+ in CSV format.
     def export_as_file(path)
       data = export_as_string
-      open(path, 'wb') { |f| f.write(data) }
+      File.open(path, 'wb') { |f| f.write(data) }
     end
 
     # ID of the worksheet.
